@@ -1,0 +1,13 @@
+{
+  "autoload": {
+    "classmap":[
+        "./"
+    ]
+  },
+  "require": {
+    "illuminate/database": "^5.5",
+    "illuminate/events": "^5.5",
+    "illuminate/http": "^5.5",
+    "illuminate/validation": "^5.5"
+  }
+}
