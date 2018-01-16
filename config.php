@@ -18,7 +18,7 @@ return [
          * Specifies the database model to use
          * Current possible models are [eloquent,adodb];
          */
-        'model' => 'eloquent',#Eloquent/adodb
+        'model' => '',#Eloquent/adodb
 
         'driver' =>'mysql',
         'host' =>'localhost',

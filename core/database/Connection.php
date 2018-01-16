@@ -17,12 +17,14 @@ class Connection{
                 break;
             case 'adodb':
                 $model = self::adodb($config);
+            default :
+                $model = self::defaultDB($config);
+                break;
         }
-
         return $model ;
     }
 
-    protected function local(array $config){
+    protected function defaultDB(array $config){
         try{
 
             return new PDO(

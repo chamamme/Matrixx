@@ -71,3 +71,8 @@ function validator(array $data=[],array $rules=[]){
 
     return $result;
 }
+
+
+function capsule($table){
+    return Capsule::table($table);
+}
