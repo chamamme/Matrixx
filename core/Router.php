@@ -13,8 +13,11 @@ use Exception;
 class Router {
 
     public static $routes = [
-        "GET"   =>  [],
-        "POST"  =>  []
+        "GET"       =>      [],
+        "POST"      =>      [],
+        "PUT"       =>      [],
+        "PATCH"     =>      [],
+        "DELETE"    =>      [],
     ];
 
     /**
@@ -59,6 +62,39 @@ class Router {
         self::$routes['POST'][$uri] = $controller;
 
     }
+
+    /**
+     * Adds a PUT request URI to the routes
+     * @param $uri
+     * @param $controller
+     */
+    public function put($uri ,$controller){
+
+        self::$routes['PUT'][$uri] = $controller;
+
+    }
+
+    /**
+     * Adds a PATCH request URI to the routes
+     * @param $uri
+     * @param $controller
+     */
+    public function patch($uri ,$controller){
+
+        self::$routes['PATCH'][$uri] = $controller;
+
+    }
+
+    /**
+     * Adds a DELETE request URI to the routes
+     * @param $uri
+     * @param $controller
+     */
+    public function delete($uri ,$controller){
+
+        self::$routes['DELETE'][$uri] = $controller;
+
+    }
     /**
      * @param array $routes
      */
@@ -77,13 +113,13 @@ class Router {
      */
     public function direct($uri){
 
-        $request_method = Request::method();
+            $request_method = Request::method();
 
-        //Check if the uri matches our list of routes
-        //then get the controller file
-        if(array_key_exists($uri,self::$routes[$request_method])){
+            //Check if the uri matches our list of routes
+            //then get the controller file
+            if(array_key_exists($uri,self::$routes[$request_method])){
 
-            $destination = self::$routes[$request_method][$uri];//something@action
+                $destination = self::$routes[$request_method][$uri];//something@action
 
 //            $array = explode("@", $destination);
 //
@@ -93,11 +129,14 @@ class Router {
 //
 //            $this->callAction($controller,$action);
 
-            return $this->callAction(...explode("@", $destination));
+                return $this->callAction(...explode("@", $destination));
 
-        }
+            }
 
-        throw new Exception('404 not found! or Bad method');
+            throw new Exception('404 not found! or Bad method',404);
+
+
+
 
     }
 

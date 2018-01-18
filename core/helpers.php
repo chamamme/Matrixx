@@ -6,6 +6,7 @@
  * Time: 4:03 PM
  */
 use App\Core\App;
+use App\Core\Response;
 use Illuminate\Container\Container;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Http\Request;
@@ -57,6 +58,10 @@ function db(){
  */
 function request(){
     return Request::capture();
+}
+
+function response($data,$status_code){
+    Response::output($data,$status_code);
 }
 
 function validator(array $data=[],array $rules=[]){

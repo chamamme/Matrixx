@@ -9,6 +9,7 @@
 namespace App\Controllers;
 
 use App\Core\App;
+use App\Core\Response;
 use App\Core\Router;
 
 class IndexController{
@@ -21,7 +22,9 @@ class IndexController{
 
         $users = db()->select('users');
 
-        return view("index",compact('users'));
+        return response($users,200);
+
+//        return view("index",compact('users'));
     }
 
     /**

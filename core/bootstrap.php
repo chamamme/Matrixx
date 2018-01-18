@@ -1,14 +1,8 @@
 <?php
 namespace App\Core;
 
-use App\Core\App;
-use App\Core\Database\DB;
-use Illuminate\Container\Container;
-use Illuminate\Filesystem\Filesystem;
-use Illuminate\Translation\FileLoader;
-use Illuminate\Translation\Translator;
-use Illuminate\Validation\Factory;
 
+use App\Core\Database\DB;
 
 App::bind('config', require "../config.php");
 
