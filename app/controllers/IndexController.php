@@ -73,13 +73,13 @@ class IndexController{
      */
     public function validate(){
 
-        $inputs = request()->input();
+        $inputs = request()->input('user_email');
+//        $email =
+        dd($inputs);
         
         $rules = [
-            'username'=>'required|max:10',
-            'useremail'=>'required|email',
-            'userage'=>'required|numeric',
-            'userdate'=>'date'
+            'user_email'=>'required|email',
+            'userage'=>'numeric|max:50'
         ];
 
         $validate = validator($inputs,$rules);

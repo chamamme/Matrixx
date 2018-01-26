@@ -8,8 +8,8 @@
  */
 
 //    $router->get('', 'admin::IndexController@home');
-    $router->get('', 'IndexController@home');
-    $router->get('home', 'IndexController@home');
+$router->get('', 'IndexController@home');
+$router->get('home', 'IndexController@home');
 $router->get('users', 'IndexController@index');
 $router->get('about', 'IndexController@about');
 $router->post('save', 'IndexController@store');
