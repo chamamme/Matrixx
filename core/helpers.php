@@ -6,6 +6,7 @@
  * Time: 4:03 PM
  */
 use App\Core\App;
+
 use App\Core\Response;
 use Illuminate\Container\Container;
 use Illuminate\Filesystem\Filesystem;
@@ -60,18 +61,22 @@ function request(){
     return Request::capture();
 }
 
-function response($data,$status_code){
+function response($data, $status_code =200){
     Response::output($data,$status_code);
 }
 
-function validator(array $data=[],array $rules=[]){
+function validator(array $data=[],array $rules=[],$messages = null){
     $loader = new FileLoader(new Filesystem, 'lang');
     $translator = new Translator($loader, 'en');
     $validation = new Factory($translator, new Container);
     $result = $validation;
 
+    #Set default messages if custom  messages are not set
+    if(empty($messages)){
+        $messages = require 'lang/en/validation.php';
+    }
     if(!empty($data) && !empty($rules)){
-        $result =  $validation->make($data,$rules);
+        $result =  $validation->make($data,$rules,$messages);
     }
 
     return $result;

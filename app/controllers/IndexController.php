@@ -33,7 +33,11 @@ class IndexController{
      */
     public function home(){
 
-        return view("home");
+        $users = db()->select('users');
+
+        return response($users,200);
+
+//        return view("home");
 
     }
 
@@ -62,5 +66,31 @@ class IndexController{
         return Router::direct('users');
 //        return view('index',compact('message'));
     }
-    
+
+
+    /**
+     * Store entities
+     */
+    public function validate(){
+
+        $inputs = request()->input();
+        
+        $rules = [
+            'username'=>'required|max:10',
+            'useremail'=>'required|email',
+            'userage'=>'required|numeric',
+            'userdate'=>'date'
+        ];
+
+        $validate = validator($inputs,$rules);
+
+        if($validate->fails()){
+            return response($validate->errors());
+        }
+
+        return response("Validation successful");
+
+//        return view('index',compact('message'));
+    }
+
 }
