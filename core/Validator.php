@@ -1,7 +1,7 @@
 <?php
 /**
  * Created with PhpStorm.
- * User: Klaus
+ * User: Andrew Chamamme
  * Date: 1/16/2018
  * Time: 10:56 AM
  * Validator class to handle all validations

@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: klaus
+ * User: Andrew Chamamme
  * Date: 15/07/2017
  * Time: 2:49 PM
  */
@@ -18,7 +18,7 @@ return [
          * Specifies the database model to use
          * Current possible models are [eloquent,adodb];
          */
-        'model' => '',#Eloquent/adodb
+        'model' => 'eloquent',#eloquent/adodb
 
         'driver' =>'mysql',
         'host' =>'localhost',

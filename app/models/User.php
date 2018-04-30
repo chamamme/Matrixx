@@ -2,11 +2,11 @@
 
 /**
  * Created by PhpStorm.
- * User: klaus
+ * User: Andrew Chamamme
  * Date: 16/07/2017
  * Time: 8:29 PM
  */
-class User
+class User extends \Illuminate\Database\Eloquent\Model
 {
 
 }

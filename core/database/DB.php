@@ -7,7 +7,7 @@ use PDO;
 
 class DB  extends Capsule {
 
-    protected  $pdo;
+    public  $model;
     //@TODO Add a table property
     //@TODO Add a table method that will take a table name and seet it to the table property
 
@@ -19,7 +19,7 @@ class DB  extends Capsule {
     {
 //        $this->pdo = $pdo;
 //        dd(Connection::make($config));
-        $this->pdo = Connection::make($config);
+        $this->model = Connection::make($config);
     }
 
     /**
@@ -28,7 +28,7 @@ class DB  extends Capsule {
      */
     public function select($table){
 
-        $statement = $this->pdo->prepare("SELECT * FROM {$table}");
+        $statement = $this->model->prepare("SELECT * FROM {$table}");
 
         $statement->execute();
 
@@ -58,7 +58,7 @@ class DB  extends Capsule {
 
         try{
             //prepare the statement
-            $statement = $this->pdo->prepare($sql);
+            $statement = $this->model->prepare($sql);
 
             //Execute it
             return $statement->execute($parameters);

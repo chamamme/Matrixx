@@ -11,16 +11,19 @@ class Connection{
 
     public static function make(array $config){
         $model = '';
+
         switch ($config['model']){
             case 'eloquent':
                 $model = self::illuminateDB($config);
                 break;
             case 'adodb':
                 $model = self::adodb($config);
+                break;
             default :
                 $model = self::defaultDB($config);
                 break;
         }
+
         return $model ;
     }
 

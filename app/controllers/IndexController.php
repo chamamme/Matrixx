@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: klaus
+ * User: Andrew Chamamme
  * Date: 15/07/2017
  * Time: 3:21 PM
  */
@@ -20,7 +20,11 @@ class IndexController{
      */
     public function index(){
 
-        $users = db()->select('users');
+
+
+//        $users = db()->select('users');
+//        $users = db()->table('users')->select('name')->where('name','andrew')->get();
+        $users =\User::find(1);
 
         return response($users,200);
 

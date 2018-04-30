@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Klaus
+ * User: Andrew Chamamme
  * Date: 1/16/2018
  * Time: 4:31 PM
  */
@@ -95,6 +95,6 @@ class Response
             503 => 'Service Unavailable',
             504 => 'Gateway Timeout',
             505 => 'HTTP Version Not Supported');
-        return ($status[$code])?$status[$code]:$status[500];
+        return (empty($status[$code]))?$status[500]:$status[$code];
     }
 }
