@@ -22,9 +22,8 @@ class IndexController{
 
 
 
-//        $users = db()->select('users');
-//        $users = db()->table('users')->select('name')->where('name','andrew')->get();
-        $users =\User::find(1);
+//        $users = db()->select('users');# When using PDO as config model
+        $users = \User::find(1);
 
         return response($users,200);
 
@@ -37,10 +36,10 @@ class IndexController{
      */
     public function home(){
 
-        $users = db()->select('users');
+        $users = \User::get();
 
         return response($users,200);
-
+//
 //        return view("home");
 
     }

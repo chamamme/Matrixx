@@ -19,6 +19,9 @@ class Connection{
             case 'adodb':
                 $model = self::adodb($config);
                 break;
+            case 'pdo':
+                $model = self::defaultDB($config);
+                break;
             default :
                 $model = self::defaultDB($config);
                 break;

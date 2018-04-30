@@ -23,6 +23,7 @@ class DB  extends Capsule {
     }
 
     /**
+     * Created for pdo model so dont use this function if you are using a different db model in config
      * @param $table
      * @return array
      */
