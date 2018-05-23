@@ -1,3 +1,4 @@
+# !!! Under Construction !!!
 # Matrixx
 **Matrix** is a lightweight  PHP framework designed with speed at its core. 
 Matrix follows a very simple model-view-controller architecture so if you have ever used Symfony, Laravel or CodeIgnitor 
@@ -14,7 +15,12 @@ framework then you should feel at home.
     If you arlready have xampp installed then copy to your htdocs and access it in browser with http://localhost/Matrix
 
 ## Documentation
-Matrix is a model0view-controller based web application framework and its largely inspired by Laravel and asuch follows its syntax.
+Matrix is a model->view-controller based web application framework and its largely inspired by Laravel and asuch follows its syntax.
+### Configuration
+The best way to start is to configure the app for your environment. The configuration file is located at the root of the project directory.ie <code> path_to_project/config.php </code> and it contains an array of configurations. Below are a list of some basic configurations to start with.
+- *app* : it contains the details of the app. 
+
+
 ### Routing
   All application routes are stored in /routes.php file. Routes are easy to define by using the $route variable using the syntax below.
   <code> $route->**\<request method\>**\(\'**\<controllerName\>**@**\<method\>**\'\) </code> where;
