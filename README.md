@@ -1,4 +1,4 @@
-# !!! Under Construction !!!
+> This readme is still underconstruction so please bear with us.
 # Matrixx
 **Matrix** is a lightweight  PHP framework designed with speed at its core. 
 Matrix follows a very simple model-view-controller architecture so if you have ever used Symfony, Laravel or CodeIgnitor 
