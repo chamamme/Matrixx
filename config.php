@@ -11,6 +11,7 @@ return [
         'name' => 'OMVC',
         'description' => 'A simple but robust  MVC structure',
         'author' => "Chamamme Andrew",
+        'version' => "0.0.1"
     ],
     'database' => [
         /**
